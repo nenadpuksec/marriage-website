@@ -15,7 +15,7 @@
                     @endif
 
                     You are logged in!
-                    <a href="{{url('profile/'. auth()->user()->profile->user_id)}}">My profile</a>
+                    <a href="{{url('profile/'. auth()->user()->id)}}">My profile</a>
                 </div>
             </div>
         </div>
