@@ -23,6 +23,7 @@
                     address: {{$user->profile->address}}<br>
                     country: {{$user->profile->country}}<br>
                     city: {{$user->profile->city}}<br>
+                    <a href="{{url('profile/'. auth()->user()->id . '/edit')}}">Edit Profile</a>
                 </div>
             </div>
         </div>
