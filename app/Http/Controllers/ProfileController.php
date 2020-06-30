@@ -23,7 +23,7 @@ class ProfileController extends Controller
     public function update(User $user)
     {
         $data = request()->validate([
-            'phonenumber' => '',
+            'phone_number' => '',
             'about' => '',
             'location' => '',
             'address' => '',
