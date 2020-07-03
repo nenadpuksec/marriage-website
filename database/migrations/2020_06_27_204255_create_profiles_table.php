@@ -23,6 +23,7 @@ class CreateProfilesTable extends Migration
             $table->string('address')->nullable();
             $table->string('country')->nullable();
             $table->string('city')->nullable();
+            $table->string('profile_img')->nullable();
             $table->timestamps();
 
             $table->index('user_id');

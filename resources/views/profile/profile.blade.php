@@ -22,6 +22,8 @@
                     address: {{$user->profile->address}}<br>
                     country: {{$user->profile->country}}<br>
                     city: {{$user->profile->city}}<br>
+                    profile picture: <img width="200px" src="{{ asset('storage/'.$user->profile->profile_img) }}" /><br>
+                    gallery:
                     @foreach($user->gallery as $images)
                         <img width="200px" src="{{ asset('storage/'.$images->image) }}" />
                     @endforeach

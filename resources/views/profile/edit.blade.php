@@ -96,6 +96,15 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <label for="profile_img" class="">profile_img</label>
+                        @error('profile_img')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    <input type="file" class="form-control-file" name="profile_img" id="profile_img">
+                </div>
 
                 <div class="row">
                     <button class="btn btn-primary">Edit Profie</button>
