@@ -47,4 +47,26 @@ class User extends Authenticatable
         return $this->hasMany(Gallery::class);
     }
 
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
+
+    public function role_user()
+    {
+        return $this->hasOne('App\RoleUser');
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($user){
+            $user->role_user()->create([
+                'role_id' => 1,
+                'user_id' => $user->user_id,
+            ]);
+        });
+    }
+
 }

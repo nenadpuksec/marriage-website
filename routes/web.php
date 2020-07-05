@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +24,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index');
+
+    Route::group(['middleware' => ['admin']], function () {
+
+        Route::get('/admin_home', 'HomeController@admin_index');
+    });
+
+});
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
 
-Route::get('/profile/gallery/create', 'GalleryController@create');
-Route::post('/profile/gallery', 'GalleryController@store');
+Route::get('/profile/gallery/create', 'GalleryController@create')->name('gallery.create');
+Route::post('/profile/gallery', 'GalleryController@store')->name('gallery.store');
+

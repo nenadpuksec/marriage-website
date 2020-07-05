@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Admin panel</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,12 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
-                    <a href="{{url('profile/'. auth()->user()->id)}}">My profile</a><br>
-
-                    @if (auth()->user()->roles->pluck('role_name')->contains('admin'))
-                        <a href="{{url('admin_home')}}">Admin Home</a>
-                    @endif
+                    You are in admin panel
+                    <a href="{{url('profile/'. auth()->user()->id)}}">My profile</a>
                 </div>
             </div>
         </div>

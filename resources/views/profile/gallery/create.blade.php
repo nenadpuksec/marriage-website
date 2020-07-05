@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <form action="{{url('profile/gallery')}}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('gallery.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
 		<div class="row">
