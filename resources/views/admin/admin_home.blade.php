@@ -16,6 +16,7 @@
 
                     You are in admin panel
                     <a href="{{url('profile/'. auth()->user()->id)}}">My profile</a>
+                    <a href="{{url('admin/user/users')}}">Users</a>
                 </div>
             </div>
         </div>

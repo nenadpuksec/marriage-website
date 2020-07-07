@@ -18,7 +18,7 @@
                     <a href="{{url('profile/'. auth()->user()->id)}}">My profile</a><br>
 
                     @if (auth()->user()->roles->pluck('role_name')->contains('admin'))
-                        <a href="{{url('admin_home')}}">Admin Home</a>
+                        <a href="{{url('admin/admin_home')}}">Admin Home</a>
                     @endif
                 </div>
             </div>
